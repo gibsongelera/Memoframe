@@ -5,5 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 
 Route::get('/files', [FileController::class, 'index'])->name('files.index');
-Route::post('/files', [FileController::class, 'store'])->name('files.store');
-Route::delete('/files/{id}', [FileController::class, 'destroy'])->name('files.destroy');
+Route::post('/upload', [FileController::class, 'upload'])->name('files.upload');
+Route::get('/download/{id}', [FileController::class, 'download'])->name('files.download');
+Route::delete('/delete/{id}', [FileController::class, 'delete'])->name('files.delete');
+Route::get('/delete-all', [FileController::class, 'deleteAll'])->name('files.deleteAll');
