@@ -9,3 +9,6 @@ Route::post('/upload', [FileController::class, 'upload'])->name('files.upload');
 Route::get('/download/{id}', [FileController::class, 'download'])->name('files.download');
 Route::delete('/delete/{id}', [FileController::class, 'delete'])->name('files.delete');
 Route::get('/delete-all', [FileController::class, 'deleteAll'])->name('files.deleteAll');
+Route::get('/dashboard', function () {
+    return view('dashboard'); // This will load resources/views/dashboard.blade.php
+})->name('dashboard');
